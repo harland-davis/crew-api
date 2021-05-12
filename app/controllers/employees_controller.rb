@@ -13,7 +13,7 @@ class EmployeesController < ApplicationController
   end
   
   def create 
-    @employee = Employee.create(email: params[:email], first_name: params[:first_name], last_name: params[:last_name], password: params[:password])
+    @employee = Employee.create(email: params[:email], first_name: params[:first_name], last_name: params[:last_name], password: params[:password], phone: params[:phone], title: params[:title], image: params[:image], street: params[:street], city: params[:city], state: params[:state], zip: params[:zip])
 
     render json: @employee, status: :created
   end

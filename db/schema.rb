@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_07_224139) do
+ActiveRecord::Schema.define(version: 2021_05_10_173521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -25,11 +25,14 @@ ActiveRecord::Schema.define(version: 2021_05_07_224139) do
     t.string "phone"
     t.date "hire_date"
     t.boolean "training"
-    t.hstore "address"
     t.string "slug"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
+    t.string "state"
+    t.string "city"
+    t.string "street"
+    t.string "zip"
   end
 
 end
