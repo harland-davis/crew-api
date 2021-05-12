@@ -7,7 +7,7 @@ class EmployeesController < ApplicationController
   end
 
   def show
-    @employee = Employee.find(params[:id])
+    @employee = Employee.find_by(id: params[:id])
 
     render json: @employee
   end

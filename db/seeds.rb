@@ -2,21 +2,6 @@ Employee.destroy_all
 
 employees = Employee.create!([
   {
-    first_name: 'Kyle',
-    last_name: 'Davis',
-    password: 'kyle',
-    title: 'Backwait',
-    email: 'davis.h.kyle@gmail.com',
-    phone: '541-321-8518',
-    image: 'https://images.unsplash.com/photo-1618850381034-4886911a1eb7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzg0fHxwb3J0YWl0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
-    hire_date: Date.strptime('10/15/2020', "%m/%d/%Y" ),
-    training: true,
-    state: 'Oregon',
-    city: 'Boulder',
-    street: '123 Boulder Canyon Drive',
-    zip:'80304'
-  },
-  {
     first_name: 'Noga',
     last_name: 'Heyman',
     password: 'noga',
@@ -152,3 +137,25 @@ employees = Employee.create!([
     zip: '97330'
   }
 ])
+
+kyle = Employee.create({
+  first_name: 'Kyle',
+  last_name: 'Davis',
+  password: 'kyle',
+  title: 'Backwait',
+  email: 'davis.h.kyle@gmail.com',
+  phone: '541-321-8518',
+  image: 'https://images.unsplash.com/photo-1618850381034-4886911a1eb7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzg0fHxwb3J0YWl0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
+  hire_date: Date.strptime('10/15/2020', "%m/%d/%Y" ),
+  training: true,
+  state: 'Oregon',
+  city: 'Boulder',
+  street: '123 Boulder Canyon Drive',
+  zip:'80304'
+})
+
+kyle.file.attach(
+  io: File.open('./public/files/w2.pdf'),
+  filename: 'w2.pdf',
+  content_type: 'application/pdf'
+)
